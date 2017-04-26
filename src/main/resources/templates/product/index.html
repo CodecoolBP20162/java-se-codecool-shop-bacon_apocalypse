@@ -34,8 +34,17 @@
 </div>
 
 <div class="container">
+
+    <!--<div class="checkbox">-->
+        <!--<label><input type="checkbox" value="">Option 1</label>-->
+    <!--</div>-->
+    <div class="checkbox" th:each="cat,iterStat : ${category}">
+        <label><input type="checkbox" value="" th:text="${cat.name}"/></label>
+    </div>
+
+
     <div class="well well-sm">
-        <strong th:text="${category.name}">Category Title</strong>
+        <strong th:text="${category}">Category Title</strong>
     </div>
 
     <div id="products" class="row list-group">
