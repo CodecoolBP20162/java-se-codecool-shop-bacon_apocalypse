@@ -5,6 +5,10 @@
     <meta name="author" content="Codecool" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <!--<link rel="icon" href="data:;base64,iVBORw0KGgo=" />-->
+
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+
     <title>Codecool Shop</title>
 
     <!-- Latest compiled and minified Jquery -->
@@ -25,6 +29,7 @@
             crossorigin="anonymous"></script>
 
     <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+
 </head>
 
 <body>
@@ -33,19 +38,42 @@
     <h1>Codecool Shop</h1>
 </div>
 
-<div class="container">
-    <div class="well well-sm">
-        <strong th:text="${category.name}">Category Title</strong>
+<nav>
+    <div class="dropdown">
+        <div class="dropbtn" >Category</div>
+        <div class="dropdown-content">
+            <div th:each="cat,iterStat : ${category}">
+                <div><a th:href="'/Category/' + ${cat.name}" th:text="${cat.name}"></a></div>
+            </div>
+            <div><a href="/">All</a></div>
+        </div>
     </div>
+    <div class="dropdown">
+        <div class="dropbtn">Supplier</div>
+        <div class="dropdown-content">
+            <div th:each="sup,iterStat : ${supplier}">
+                <div><a th:href="'/Supplier/' + ${sup.name}" th:text="${sup.name}"></a></div>
+            </div>
+            <div><a href="/">All</a></div>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+
 
     <div id="products" class="row list-group">
 
         <div class="item col-xs-4 col-lg-4" th:each="prod,iterStat : ${products}">
             <div class="thumbnail">
-                <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" th:attr="src='/img/product_' + ${prod.id} + '.jpg'" alt="" />
+                <div class="image-holder">
+                <img class="group list-group-image" align="middle" src="http://placehold.it/400x250/000/fff" th:attr="src='/img/product_' + ${prod.id} + '.jpg'" alt="" />
+                </div>
                 <div class="caption">
+                    <div class="caption-text">
                     <h4 class="group inner list-group-item-heading" th:text="${prod.name}">Product name</h4>
                     <p class="group inner list-group-item-text" th:text="${prod.description}">Product description... </p>
+                    </div>
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
                             <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
