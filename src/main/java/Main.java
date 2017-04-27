@@ -72,10 +72,13 @@ public class Main {
         productDataStore.add(new Product("Lenovo IdeaPad Miix 700", 479, "USD", "Keyboard cover is included. Fanless Core m5 processor. Full-size USB ports. Adjustable kickstand.", tablet, lenovo));
         productDataStore.add(new Product("Amazon Fire HD 8", 89, "USD", "Amazon's latest Fire HD 8 tablet is a great value for media consumption.", tablet, amazon));
 
-        productDataStore.add(new Product("Bla", 200, "USD", "Bla", laptop, lenovo));
-        productDataStore.add(new Product("Bla", 300, "USD", "Bla", laptop, lenovo));
+        productDataStore.add(new Product("Lenovo Yoga Tab 3 - HD 8\"", 170, "USD", "Android Tablet Computer. (Qualcomm Snapdragon APQ8009, 2GB RAM, 16GB SSD)", tablet, lenovo));
+        productDataStore.add(new Product("Lenovo Ideapad 700 - 15.6\"", 300, "USD", "Bla", laptop, lenovo));
 
-        productDataStore.add(new Product("Bla", 1000, "USD", "Bla", camera, amazon));
+        productDataStore.add(new Product("Fire Tablet with Alexa, 7\"", 666, "USD", "FHD Laptop (Intel Core i7, 16 GB RAM)", tablet, amazon));
+        productDataStore.add(new Product("2017 Lenovo Premium HD Laptop", 240, "USD", "FHD Laptop (Intel Core i7, 16 GB RAM)", laptop, lenovo));
+
+        productDataStore.add(new Product("2019 Lenovo Ultra Super Noscope Camera", 4242, "USD", "FHD Laptop (Intel Core i7, 16 GB RAM)", camera, lenovo));
     }
 
 

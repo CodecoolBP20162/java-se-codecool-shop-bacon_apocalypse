@@ -7,7 +7,7 @@
 
     <!--<link rel="icon" href="data:;base64,iVBORw0KGgo=" />-->
 
-    <link rel="shortcut icon" href="/favicon.ico"/>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
 
     <title>Codecool Shop</title>
 
@@ -93,10 +93,14 @@
 
         <div class="item col-xs-4 col-lg-4" th:each="prod,iterStat : ${products}">
             <div class="thumbnail">
-                <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" th:attr="src='/img/product_' + ${prod.id} + '.jpg'" alt="" />
+                <div class="image-holder">
+                <img class="group list-group-image" align="middle" src="http://placehold.it/400x250/000/fff" th:attr="src='/img/product_' + ${prod.id} + '.jpg'" alt="" />
+                </div>
                 <div class="caption">
+                    <div class="caption-text">
                     <h4 class="group inner list-group-item-heading" th:text="${prod.name}">Product name</h4>
                     <p class="group inner list-group-item-text" th:text="${prod.description}">Product description... </p>
+                    </div>
                     <div class="row">
                         <div class="col-xs-12 col-md-6">
                             <p class="lead" th:text="${prod.getPrice()}">100 USD</p>
