@@ -60,3 +60,87 @@
 {
     margin: 0 0 11px;
 }
+
+ul {
+   list-style-type: none;
+}
+
+.jumbotron {
+   background-image: url("/img/heroimage2.jpg");
+   /*background-size: cover;*/
+   background-size:100%;
+   background-position: top;
+   color:white;
+   text-shadow: 2px 2px black;
+   margin:0;
+}
+
+nav {
+   paddin-leftg:8px;
+   background:#eee;
+   padding-left:20px;
+   border-top: 2px solid #eee;
+   /*background-color: #dedede ;*/
+   margin-bottom:25px;
+
+}
+
+.navbar-brand {
+   width:105px;
+}
+
+.nav {
+   border-left: 1px solid #d9e2e1 ;
+}
+
+.nav :hover {
+   background-color: #e0e0e0 ;
+}
+
+/*drop button stuff*/
+/*              */
+.dropbtn {
+   /*background-color: #e6e6e6 ;*/
+   color: black;
+   padding: 10px 0 10px 10px;
+   font-size: 16px;
+   border: 1px solid #d1d1d1 ;
+   cursor: pointer;
+   /*box-shadow: 2px -3px 5px #888888 ;*/
+}
+
+.dropdown {
+   position: relative;
+   display: inline-block;
+   margin-right:10px;
+   width:120px;
+}
+
+.dropdown-content {
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9 ;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+}
+
+.dropdown-content a {
+   color: black;
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1 }
+
+.dropdown:hover .dropdown-content {
+   display: block;
+}
+
+.dropdown:hover .dropbtn {
+   background-color: #bcc5c4 ;
+}
+
+/*dropdown stuff end*/
+/*                  */
