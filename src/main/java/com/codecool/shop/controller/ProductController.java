@@ -35,14 +35,12 @@ public class ProductController {
         return new ModelAndView(params, "product/index");
     }
 
-    public static ModelAndView renderFilteredProducts(Request req, Response res) {
-        ProductCategoryDao productCategoryDataStore = ProductCategoryDaoMem.getInstance();
+    public static ModelAndView renderFilteredProductsByCategory(Request req, Response res) {
         SupplierDao supplierDataStore = SupplierDaoMem.getInstance();
+        ProductCategoryDao productCategoryDataStore = ProductCategoryDaoMem.getInstance();
 
         String target = req.params("name");
         int id;
-
-        System.out.println(target);
 
         for (ProductCategory cat : productCategoryDataStore.getAll()) {
             if (target.equals(cat.getName())) {
@@ -51,7 +49,22 @@ public class ProductController {
             }
         }
 
-        System.out.println(filteredCategory);
+        filteredProduct = filteredCategory.getProducts();
+
+        Map params = new HashMap<>();
+        params.put("category", productCategoryDataStore.getAll());
+        params.put("products", filteredProduct);
+        params.put("supplier", supplierDataStore.getAll());
+        return new ModelAndView(params, "product/index");
+
+    }
+
+    public static ModelAndView renderFilteredProductsBySupplier(Request req, Response res) {
+        SupplierDao supplierDataStore = SupplierDaoMem.getInstance();
+        ProductCategoryDao productCategoryDataStore = ProductCategoryDaoMem.getInstance();
+
+        String target = req.params("name");
+        int id;
 
         for (Supplier sup : supplierDataStore.getAll()) {
             if (target.equals(sup.getName())) {
@@ -60,17 +73,7 @@ public class ProductController {
             }
         }
 
-        System.out.println(filteredSupplier);
-
-        if (filteredSupplier == null && filteredCategory.getName().equals(target)) {
-            filteredProduct = filteredCategory.getProducts();
-        }
-
-        else if (filteredSupplier.getName().equals(target)) {
-            filteredProduct = filteredSupplier.getProducts();
-        }
-
-        System.out.println(filteredProduct);
+        filteredProduct = filteredSupplier.getProducts();
 
         Map params = new HashMap<>();
         params.put("category", productCategoryDataStore.getAll());
