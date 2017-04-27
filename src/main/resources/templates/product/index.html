@@ -38,33 +38,52 @@
     <h1>Codecool Shop</h1>
 </div>
 
+<nav>
+    <div class="dropdown">
+        <div class="dropbtn" >Category</div>
+        <div class="dropdown-content">
+            <div th:each="cat,iterStat : ${category}">
+                <div><a th:href="'/Category/' + ${cat.name}" th:text="${cat.name}"></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="dropdown">
+        <div class="dropbtn">Supplier</div>
+        <div class="dropdown-content">
+            <div th:each="sup,iterStat : ${supplier}">
+                <div><a th:href="'/Supplier/' + ${sup.name}" th:text="${sup.name}"></a></div>
+            </div>
+        </div>
+    </div>
+</nav>
+
 <div class="container">
 
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Category</a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav" th:each="cat,iterStat : ${category}">
-                    <li><a th:href="'/' + ${cat.name}" th:text="${cat.name}"></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!--<nav class="navbar navbar-default">-->
+        <!--<div class="container-fluid">-->
+            <!--<div class="navbar-header">-->
+                <!--<a class="navbar-brand" href="#">Category</a>-->
+            <!--</div>-->
+            <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
+                <!--<ul class="nav navbar-nav" th:each="cat,iterStat : ${category}">-->
+                    <!--<li><a th:href="'/' + ${cat.name}" th:text="${cat.name}"></a></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</nav>-->
 
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Supplier</a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-                <ul class="nav navbar-nav" th:each="sup,iterStat : ${supplier}">
-                    <li><a th:href="'/' + ${sup.name}" th:text="${sup.name}"></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!--<nav class="navbar navbar-default">-->
+        <!--<div class="container-fluid">-->
+            <!--<div class="navbar-header">-->
+                <!--<a class="navbar-brand" href="#">Supplier</a>-->
+            <!--</div>-->
+            <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">-->
+                <!--<ul class="nav navbar-nav" th:each="sup,iterStat : ${supplier}">-->
+                    <!--<li><a th:href="'/' + ${sup.name}" th:text="${sup.name}"></a></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</nav>-->
 
     <!--<div class="well well-sm">-->
         <!--<strong th:text="${category}">Category Title</strong>-->
