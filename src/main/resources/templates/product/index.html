@@ -5,6 +5,10 @@
     <meta name="author" content="Codecool" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <!--<link rel="icon" href="data:;base64,iVBORw0KGgo=" />-->
+
+    <link rel="shortcut icon" href="/favicon.ico"/>
+
     <title>Codecool Shop</title>
 
     <!-- Latest compiled and minified Jquery -->
@@ -25,6 +29,7 @@
             crossorigin="anonymous"></script>
 
     <link rel="stylesheet" type="text/css" href="/css/custom.css" />
+
 </head>
 
 <body>
@@ -35,17 +40,35 @@
 
 <div class="container">
 
-    <!--<div class="checkbox">-->
-        <!--<label><input type="checkbox" value="">Option 1</label>-->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Category</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav" th:each="cat,iterStat : ${category}">
+                    <li><a th:href="'/' + ${cat.name}" th:text="${cat.name}"></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Supplier</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav" th:each="sup,iterStat : ${supplier}">
+                    <li><a th:href="'/' + ${sup.name}" th:text="${sup.name}"></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--<div class="well well-sm">-->
+        <!--<strong th:text="${category}">Category Title</strong>-->
     <!--</div>-->
-    <div class="checkbox" th:each="cat,iterStat : ${category}">
-        <label><input type="checkbox" value="" th:text="${cat.name}"/></label>
-    </div>
-
-
-    <div class="well well-sm">
-        <strong th:text="${category}">Category Title</strong>
-    </div>
 
     <div id="products" class="row list-group">
 
