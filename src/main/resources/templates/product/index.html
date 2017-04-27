@@ -44,7 +44,7 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav" th:each="cat,iterStat : ${category}">
-                    <li><a href="/index" th:text="${cat.name}"></a></li>
+                    <li><a th:href="'/' + ${cat.name}" th:text="${cat.name}"></a></li>
                 </ul>
             </div>
         </div>
@@ -57,7 +57,7 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                 <ul class="nav navbar-nav" th:each="sup,iterStat : ${supplier}">
-                    <li><a href="#" th:text="${sup.name}"></a></li>
+                    <li><a th:href="'/' + ${sup.name}" th:text="${sup.name}"></a></li>
                 </ul>
             </div>
         </div>
