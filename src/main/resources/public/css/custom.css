@@ -3,16 +3,24 @@
 }
 .thumbnail
 {
+    /*height:400px;*/
     margin-bottom: 20px;
     padding: 0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
 }
-.thumbnail img
+.image-holder img
 {
+    width:210px;
+    height:140px;
     margin-top: 10px;
 }
+
+.image-holder {
+    margin-bottom: 10px;
+}
+
 .item.list-group-item
 {
     float: none;
@@ -61,6 +69,10 @@
     margin: 0 0 11px;
 }
 
+.caption-text {
+    height:150px;
+}
+
 ul {
    list-style-type: none;
 }
@@ -76,14 +88,14 @@ ul {
 }
 
 nav {
-   paddin-leftg:8px;
    background:#eee;
-   padding-left:20px;
+   padding-left:30px;
    border-top: 2px solid #eee;
    /*background-color: #dedede ;*/
    margin-bottom:25px;
-
 }
+
+
 
 .navbar-brand {
    width:105px;
@@ -104,7 +116,7 @@ nav {
    color: black;
    padding: 10px 0 10px 10px;
    font-size: 16px;
-   border: 1px solid #d1d1d1 ;
+   /*border: 1px solid #d1d1d1 ;*/
    cursor: pointer;
    /*box-shadow: 2px -3px 5px #888888 ;*/
 }
