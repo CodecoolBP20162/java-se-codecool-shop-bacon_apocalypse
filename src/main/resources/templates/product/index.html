@@ -5,6 +5,10 @@
     <meta name="author" content="Codecool" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <!--<link rel="icon" href="data:;base64,iVBORw0KGgo=" />-->
+
+    <link rel="shortcut icon" href="/favicon.ico"/>
+
     <title>Codecool Shop</title>
 
     <!-- Latest compiled and minified Jquery -->
@@ -26,7 +30,6 @@
 
     <link rel="stylesheet" type="text/css" href="/css/custom.css" />
 
-    <script src="/js/custom.js"></script>
 </head>
 
 <body>
@@ -63,23 +66,9 @@
         </div>
     </nav>
 
-    <!--<fieldset class="fieldset">-->
-        <!--<legend>Category</legend>-->
-        <!--<div class="checkbox" th:each="cat,iterStat : ${category}">-->
-            <!--<label><input type="checkbox" th:text="${cat.name}" th:id="${cat.id}"/></label>-->
-        <!--</div>-->
-    <!--</fieldset><br />-->
-
-    <!--<fieldset class="fieldset">-->
-        <!--<legend>Supplier</legend>-->
-        <!--<div class="checkbox" th:each="sup,iterStat : ${supplier}">-->
-            <!--<label><input type="checkbox" th:text="${sup.name}" th:id="${sup.id}"/></label>-->
-        <!--</div>-->
-    <!--</fieldset>-->
-
-    <!--<div class="well well-sm">-->
-        <!--<strong th:text="${products.name}">Category Title</strong>-->
-    <!--</div>-->
+    <div class="well well-sm">
+        <strong th:text="${category}">Category Title</strong>
+    </div>
 
     <div id="products" class="row list-group">
 
